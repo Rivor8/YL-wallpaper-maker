@@ -14,8 +14,8 @@
                 <div class="card-body">
                     <a href="{{ item.content }}" download="{{ item.title }}.jpg"><h5 class="card-title">{{ item.title
                         }}</h5></a>
-                    <p class="card-text">Дата создания <b>{{ item.created_date }}</b>
-                    </p>
+                    <p class="card-text">Дата создания <b>{{ item.created_date }}</b></p>
+                    <a href="/wp_delete/{{ item.id }}" class="btn btn-outline-dark">Удалить</a>
                 </div>
             </div>
         </div>

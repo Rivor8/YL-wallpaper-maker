@@ -2,6 +2,7 @@ import os
 
 from flask import Flask, url_for, render_template, request
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
+from werkzeug.exceptions import abort
 from werkzeug.utils import redirect
 
 from data import db_session
@@ -92,6 +93,20 @@ def login():
                                message="Неправильный логин или пароль",
                                form=form)
     return render_template('login.html', title='Авторизация', form=form)
+
+
+@app.route('/wp_delete/<int:id>', methods=['GET', 'POST'])
+@login_required
+def wp_delete(id):
+    session = db_session.create_session()
+    wps = session.query(Wallpapers).filter(Wallpapers.id == id,
+                                      Wallpapers.user == current_user).first()
+    if wps:
+        session.delete(wps)
+        session.commit()
+    else:
+        abort(404)
+    return redirect('/')
 
 
 @app.route('/logout')
