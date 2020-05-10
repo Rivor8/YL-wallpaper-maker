@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block content %}
+{% if current_user.is_authenticated %}
+<div class="container" style="padding-top: 30px;">
+    <div class="row">
+        <div class="col-lg-4 col-md">
+            <br>
+            <canvas width="1080" height="1920" id="canvas" style="height: 70vh;"></canvas>
+        </div>
+        <div class="col-lg-4 col-md">
+            <br>
+            <div class="form-group te-button">
+                <button type="button" class="btn btn-primary btn-lg" onclick="newText()">+ добавить новый текст</button>
+            </div>
+            <div class="te-form">
+                <div class="form-group">
+                    <label for="textWP">Текст на обоях</label>
+                    <input class="form-control" id="textWP" rows="3">
+                </div>
+                <div class="form-group">
+                    <select class="form-control form-control-sm" id="textFont">
+                        <option>impact</option>
+                        <option>amatic SC</option>
+                        <option>lobster</option>
+                        <option>cormorant garamond</option>
+                        <option>comic neue</option>
+                        <option>dancing script</option>
+                        <option>indie flower</option>
+                        <option>shadows into light</option>
+                        <option>josefin slab</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="textSize">Размер</label>
+                    <input type="range" class="form-control-range" id="textSize">
+                </div>
+                <div class="form-group">
+                    <label for="widthTextPos">По ширине</label>
+                    <input type="range" class="form-control-range" id="widthTextPos">
+                </div>
+                <div class="form-group">
+                    <label for="heightTextPos">По высоте</label>
+                    <input type="range" class="form-control-range" id="heightTextPos">
+                </div>
+                <div class="form-group">
+                    <label for="textRot">Поворот</label>
+                    <input type="range" class="form-control-range" id="textRot">
+                </div>
+                <div class="form-group">
+                    <label for="colorText">Цвет</label>
+                    <input type="color" value="#ffffff" id="colorText" style="border: transparent; border-radius: 9px;">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-outline-primary" onclick="saveText()">Сохранить текст</button>
+                    <button type="button" class="btn btn-outline-dark" onclick="deleteText()">Удалить</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md">
+            <br>
+            <h4>Новые обои</h4>
+            <div class="form-group">
+                <label for="colorText">Цвет фона</label>
+                <input type="color" value="#000000" id="colorBack" style="border: transparent; border-radius: 9px;">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-outline-primary" onclick="newWP()">Создать обои</button>
+            </div>
+            <h4>Сохранить обои</h4>
+            <div class="form-group">
+                <label for="fileName">Название</label>
+                <input class="form-control" id="fileName" rows="3" value="New wallpaper">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" onclick="saveImage()">Сохранить обои на сайте</button>
+                <button type="button" class="btn btn-dark" onclick="exportImage()">Скачать обои</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="container" style="padding-top: 30px;">
+    <p style="text-align: center">
+        <h2 style="text-align: center">Нужно <a href="/register">зарегистрироваться</a> или <a href="/login">войти</a> в аккаунт</h2>
+    </p>
+</div>
+{% endif %}
+{% endblock %}

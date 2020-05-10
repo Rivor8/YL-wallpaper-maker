@@ -1,0 +1,54 @@
+@font-face{
+font-family: 'impact';
+src: url('../fonts/impact.ttf');
+font-weight: normal;
+font-style: normal;
+}
+@font-face{
+font-family: 'amatic SC';
+src: url('../fonts/AmaticSC-Regular.ttf');
+font-weight: normal;
+font-style: normal;
+}
+@font-face{
+font-family: 'lobster';
+src: url('../fonts/lobster.ttf');
+font-weight: normal;
+font-style: normal;
+}
+@font-face{
+font-family: 'cormorant garamond';
+src: url('../fonts/CormorantGaramond-Regular.ttf');
+font-weight: normal;
+font-style: normal;
+}
+@font-face{
+font-family: 'comic neue';
+src: url('../fonts/ComicNeue-Regular.ttf');
+font-weight: normal;
+font-style: normal;
+}
+@font-face{
+font-family: 'dancing script';
+src: url('../fonts/DancingScript-Regular.ttf');
+font-weight: normal;
+font-style: normal;
+}
+@font-face{
+font-family: 'indie flower';
+src: url('../fonts/IndieFlower-Regular.ttf');
+font-weight: normal;
+font-style: normal;
+}
+@font-face{
+font-family: 'shadows into light';
+src: url('../fonts/ShadowsIntoLight-Regular.ttf');
+font-weight: normal;
+font-style: normal;
+}
+@font-face{
+font-family: 'josefin slab';
+src: url('../fonts/JosefinSlab-Regular.ttf');
+font-weight: normal;
+font-style: normal;
+}

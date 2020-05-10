@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container" style="padding-top: 30px;">
+    {% if current_user.is_authenticated %}
+    <h2>Здравствуйте, {{ current_user.name }}</h2>
+    <p>{{ current_user.email }}</p>
+    <a href="/logout">Выйти из аккаунта</a>
+    <h2>Мои обои</h2><br>
+    <div class="row">
+        {% for item in wps%}
+        <div class="col-sm-3">
+            <div class="card">
+                <img src="{{ item.content }}" class="card-img-top" alt="{{ item.title }}">
+                <div class="card-body">
+                    <a href="{{ item.content }}" download="{{ item.title }}.jpg"><h5 class="card-title">{{ item.title
+                        }}</h5></a>
+                    <p class="card-text">Дата создания <b>{{ item.created_date }}</b>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p style="text-align: center">
+    <h2 style="text-align: center">Нужно <a href="/register">зарегистрироваться</a> или <a href="/login">войти</a> в
+        аккаунт</h2>
+    </p>
+    {% endif %}
+</div>
+{% endblock %}
